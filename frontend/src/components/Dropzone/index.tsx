@@ -11,16 +11,13 @@ interface Props {
 const Dropzone: React.FC<Props> = ({ onFileUploaded }) => {
   const [selectedFileUrl, setSelectedFileUrl] = useState("");
 
-  const onDrop = useCallback(
-    (acceptedFiles) => {
-      const file = acceptedFiles[0];
+  const onDrop = useCallback((acceptedFiles) => {
+    const file = acceptedFiles[0];
 
-      const fileUrl = URL.createObjectURL(file);
-      setSelectedFileUrl(fileUrl);
-      onFileUploaded(file);
-    },
-    [onFileUploadeddata.append('image', selected);]
-  );
+    const fileUrl = URL.createObjectURL(file);
+    setSelectedFileUrl(fileUrl);
+    onFileUploaded(file);
+  }, [onFileUploaded]);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: "image/*",
