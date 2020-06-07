@@ -19,7 +19,7 @@ const Dropzone: React.FC<Props> = ({ onFileUploaded }) => {
       setSelectedFileUrl(fileUrl);
       onFileUploaded(file);
     },
-    [onFileUploaded]
+    [onFileUploadeddata.append('image', selected);]
   );
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
